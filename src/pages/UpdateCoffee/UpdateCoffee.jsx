@@ -22,7 +22,7 @@ const UpdateCoffee = () => {
 
     const updatedCoffee = { updatedName, updatedChef, updatedSupplier, updatedTaste, updatedCategory, updatedDetails, updatedPhoto };
 
-    fetch(`http://localhost:5000/coffee/${_id}`, {
+    fetch(`https://coffeeshop-server.onrender.com/coffee/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json"
@@ -32,7 +32,10 @@ const UpdateCoffee = () => {
       .then(res => res.json())
       .then(data => {
 
-        if (data.modifiedCount > 0) toast.success("Coffee updated successfully");
+        if (data.modifiedCount > 0) {
+          toast.success("Coffee updated successfully");
+          form.reset();
+        }
         else {
           toast.error("Something went wrong");
           console.log(data);

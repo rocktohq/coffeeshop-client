@@ -18,7 +18,7 @@ const AddCoffee = () => {
 
     const coffee = { name, chef, supplier, taste, category, details, photo };
 
-    fetch("http://localhost:5000/coffee", {
+    fetch("https://coffeeshop-server.onrender.com/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json"
@@ -28,7 +28,10 @@ const AddCoffee = () => {
       .then(res => res.json())
       .then(data => {
 
-        if (data.insertedId) toast.success("Coffee added successfully");
+        if (data.insertedId) {
+          toast.success("Coffee added successfully");
+          form.reset();
+        }
         else {
           toast.error("Something went wrong");
           console.log(data);

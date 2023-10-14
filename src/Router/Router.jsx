@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/coffee")
+        loader: () => fetch("https://coffeeshop-server.onrender.com/coffee")
       },
       {
         path: "/coffee/:id",
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
           {
             path: "/dashboard",
             element: <Dashboard></Dashboard>,
-            loader: () => fetch("http://localhost:5000/coffee")
+            loader: () => fetch("https://coffeeshop-server.onrender.com/coffee")
           },
           {
             path: "/dashboard/addCoffee",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
           {
             path: "/dashboard/updateCoffee/:id",
             element: <UpdateCoffee></UpdateCoffee>,
-            loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+            loader: ({ params }) => fetch(`https://coffeeshop-server.onrender.com/coffee/${params.id}`)
           }
         ]
       }
