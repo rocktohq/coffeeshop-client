@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom"
-import CoffeeCard from "../Shared/CoffeeCard/CoffeeCard";
+import CoffeeCard from "./CoffeeCard";
 import toast from "react-hot-toast";
 import { useState } from "react";
 
