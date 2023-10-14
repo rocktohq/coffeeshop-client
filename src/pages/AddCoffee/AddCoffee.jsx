@@ -18,7 +18,7 @@ const AddCoffee = () => {
 
     const coffee = { name, chef, supplier, taste, category, details, photo };
 
-    fetch("https://coffeeshop-server.onrender.com/coffee", {
+    fetch("http://localhost:5000/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json"

@@ -22,7 +22,7 @@ const UpdateCoffee = () => {
 
     const updatedCoffee = { updatedName, updatedChef, updatedSupplier, updatedTaste, updatedCategory, updatedDetails, updatedPhoto };
 
-    fetch(`https://coffeeshop-server.onrender.com/coffee/${_id}`, {
+    fetch(`http://localhost:5000/coffee/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json"
