@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [coffeeList, setCoffeeList] = useState(loadedCoffeeList);
 
   const handleDelete = (id) => {
-    fetch(`https://coffeeshop-server.onrender.com/coffee/${id}`, {
+    fetch(`http://localhost:5000/coffee/${id}`, {
       method: "DELETE"
     })
       .then(res => res.json())
