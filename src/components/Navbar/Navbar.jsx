@@ -5,6 +5,8 @@ const Navbar = () => {
   const navLinks = <>
     <li className="hover:text-secondary"><NavLink to="/">Home</NavLink></li>
     <li className="hover:text-secondary"><NavLink to="/dashboard">Dashboard</NavLink></li>
+    <li className="hover:text-secondary"><NavLink to="/signIn">SignIn</NavLink></li>
+    <li className="hover:text-secondary"><NavLink to="/signUp">SignUp</NavLink></li>
   </>;
 
   return (
@@ -18,8 +20,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to="/" className="text-3xl font-bold hidden lg:block">Expresso<span className="text-secondary">Emporium</span></Link>
-        <Link className="text-3xl font-bold lg:hidden">E<span className="text-secondary">E</span></Link>
+        <Link to="/" className="text-3xl font-bold">Coffee<span className="text-secondary">Shop</span></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-2 text-lg space-x-2">

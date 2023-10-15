@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom"
 import CoffeeCard from "./CoffeeCard";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Dashboard = () => {
 
@@ -9,7 +10,7 @@ const Dashboard = () => {
   const [coffeeList, setCoffeeList] = useState(loadedCoffeeList);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/coffee/${id}`, {
+    fetch(`https://coffeeshop-server.vercel.app/coffee/${id}`, {
       method: "DELETE"
     })
       .then(res => res.json())
@@ -27,22 +28,27 @@ const Dashboard = () => {
   }
 
   return (
-    <section>
-      <div className="bg-base-200 p-5 rounded-md shadow-md">
-        <p>
-          <span>Home &#187; Dashboard</span>
-        </p>
-      </div>
-      {
-        coffeeList.length > 0
-          ? <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
-            {
-              coffeeList.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee} handleDelete={handleDelete}></CoffeeCard>)
-            }
-          </div>
-          : <h2 className="text-2xl font-bold text-center mt-12">No Data Found!</h2>
-      }
-    </section >
+    <HelmetProvider>
+      <Helmet>
+        <title>Dashboard</title>
+      </Helmet>
+      <section>
+        <div className="bg-base-200 p-5 rounded-md shadow-md">
+          <p>
+            <span>Home &#187; Dashboard</span>
+          </p>
+        </div>
+        {
+          coffeeList.length > 0
+            ? <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
+              {
+                coffeeList.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee} handleDelete={handleDelete}></CoffeeCard>)
+              }
+            </div>
+            : <h2 className="text-2xl font-bold text-center mt-12">No Data Found!</h2>
+        }
+      </section >
+    </HelmetProvider>
   )
 }
 
