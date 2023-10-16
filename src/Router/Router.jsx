@@ -8,7 +8,7 @@ import UpdateCoffee from "../pages/UpdateCoffee/UpdateCoffee";
 import ViewCoffee from "../pages/ViewCoffee/ViewCoffee";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import SignIn from "../pages/SignIn/SignIn";
-import SignUp from "../pages/SIgnUp/SIgnUp";
+import SignUp from "../pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
